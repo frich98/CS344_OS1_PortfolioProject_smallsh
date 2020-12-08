@@ -31,7 +31,7 @@ main.c
 cmd_functions.c
 cmd_functions.h
 process_functions.c
-process_functions.happen
+process_functions.h
 
 (also, of course, the 1 README.TXT file you have open is in that zipped file as well :] )
 ---------------------------------------------------------------------------------
