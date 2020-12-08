@@ -71,7 +71,7 @@ int main(int argc, char *argv[]){
 	while(1){
 		
 		// Each loop of the while, need to go find processes which
-		// are not done yet, and update their status and print
+		// are not done, and update their status and print
 		// to console
 		updateChildProcesses(childProcessList);
 		
@@ -95,7 +95,7 @@ int main(int argc, char *argv[]){
 			// --- IF user chose a non-built-in command: 
 			if(strcmp(userCmd->command, "exit") 	!= 0 &&
 			   strcmp(userCmd->command, "status") 	!= 0 &&
-			   strcmp(userCmd->command, "cd") 		!= 0 ){
+			   strcmp(userCmd->command, "cd") 	!= 0 ){
 					
 					// --- Build a new child foreground process
 					createChildProcess(userCmd, &childProcessList, pidStr, userInput);
@@ -115,7 +115,6 @@ int main(int argc, char *argv[]){
 				} else {
 					changeDirectory("\0");
 				}
-	
 			}
 
 			// Built-In Command #1 - Exit - takes no arguments
@@ -137,18 +136,15 @@ int main(int argc, char *argv[]){
 				deleteLinkedList(childProcessList);
 			
 				// exit main, i.e. end program
-				exit(0);
-				
+				exit(0);	
 			}
 			
 			// Free Cmd created dynamically
 			deleteCmd(userCmd);
 			free(userCmd);
-		
 			// Free user Input
 			free(userInput);
 		}		
-
 	} 
 	
 	// Dynamically allocated memory - freeing
