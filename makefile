@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = --std=gnu99
 SRCEXT = c
 
-movies: main.c
+smallsh: main.c
 	$(CC) $(CFLAGS) -o smallsh main.c cmd_functions.c cmd_functions.h process_functions.c process_functions.h
 
 clean : 
